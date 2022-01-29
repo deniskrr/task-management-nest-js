@@ -19,6 +19,9 @@ import { configValidationSchema } from './config.schema';
         return {
           type: 'postgres',
           autoLoadEntities: true,
+          ssl: {
+            rejectUnauthorized: false,
+          },
           synchronize: true,
           host: configService.get('DB_HOST'),
           port: configService.get('DB_PORT'),
